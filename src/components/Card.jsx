@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TbListDetails } from "react-icons/tb";
+import { TbListDetails, TbShoppingBagCheck } from "react-icons/tb";
+import { shortenText } from "../helpers/helper";
+import styles from "./Card.module.css";
 function Card({ data }) {
   const { id, title, image, price } = data;
   return (
-    <div>
+    <div className={styles.card}>
       <img src={image} alt={title} style={{ width: "150px" }} />
-      <h3>{title}</h3>
+      <h3>{shortenText(title)}</h3>
       <p>{price} $</p>
-      <div>
+      <div className={styles.actions}>
         <Link to={`/products/${id}`}>
           <TbListDetails />
         </Link>
+        <button>
+          <TbShoppingBagCheck />
+        </button>
       </div>
     </div>
   );
