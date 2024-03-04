@@ -5,6 +5,7 @@ import Card from "../components/Card";
 import Loader from "../components/Loader";
 import { ImSearch } from "react-icons/im";
 import { FaListUl } from "react-icons/fa";
+import { filterProducts, searchProducts } from "../helpers/helper";
 
 function Products() {
   const products = useProducts();
@@ -16,7 +17,11 @@ function Products() {
   }, [products]);
 
   useEffect(() => {
-    console.log(query);
+    let finalProducts = searchProducts(products, query.search);
+    finalProducts = filterProducts(finalProducts, query.category);
+
+    console.log(finalProducts);
+    setDisplayed(finalProducts);
   }, [query]);
 
   const searchHandler = () => {
