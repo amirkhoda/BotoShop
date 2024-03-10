@@ -10,7 +10,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         ...sumProducts(state.selectedItems),
-        chackout: false,
+        checkout: false,
       };
     case "REMOVE_ITEM":
       const newSelectedItems = state.selectedItems.filter(
@@ -54,7 +54,7 @@ const initialState = {
   selectedItems: [],
   itemsCounter: 0,
   total: 0,
-  chackout: false,
+  checkout: false,
 };
 
 const CardContext = createContext();
