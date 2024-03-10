@@ -2,7 +2,9 @@ import React from "react";
 import { FaListUl } from "react-icons/fa";
 import { creatQueryObject } from "../helpers/helper";
 import styles from "./Sidebar.module.css";
-function Sidebar({ setQuery }) {
+import categories from "../constant/list";
+
+function Sidebar({ query, setQuery }) {
   const categoryHandler = (e) => {
     const { tagName } = e.target;
     const category = e.target.innerText.toLowerCase();
@@ -15,11 +17,18 @@ function Sidebar({ setQuery }) {
         <p>Categories</p>
         <FaListUl />
         <ul onClick={categoryHandler}>
-          <li>All</li>
-          <li>Electronics</li>
-          <li>Jewelery</li>
-          <li>Men's Clothing</li>
-          <li>Women's Clothing</li>
+          {categories.map((item) => (
+            <li
+              key={item.id}
+              className={
+                item.name.toLocaleLowerCase() === query.category
+                  ? styles.selected
+                  : null
+              }
+            >
+              {item.name}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

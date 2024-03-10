@@ -17,8 +17,8 @@ function Products() {
   const [search, setSearch] = useState("");
   const [displayed, setDisplayed] = useState([]);
   const [query, setQuery] = useState({});
-
   const [searchParams, setSearchParams] = useSearchParams();
+
   useEffect(() => {
     setDisplayed(products);
     setQuery(getInitialQuery(searchParams));
@@ -29,8 +29,6 @@ function Products() {
     setSearch(query.search || "");
     let finalProducts = searchProducts(products, query.search);
     finalProducts = filterProducts(finalProducts, query.category);
-
-    console.log(finalProducts);
     setDisplayed(finalProducts);
   }, [query]);
 

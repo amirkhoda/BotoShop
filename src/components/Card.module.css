@@ -45,26 +45,27 @@
   cursor: pointer;
 }
 
-.action div {
+.actions div {
   display: flex;
   align-items: center;
 }
 
-.action div span {
+.actions div span {
   width: 20px;
   text-align: center;
   margin: 0 10px;
 }
 
-.action div button {
+.actions div button {
   background-color: #fe5d42;
+  align-items: center;
   color: #fff;
   border: none;
   font-size: 1.7rem;
   height: 32px;
   width: 32px;
   line-height: 32px;
-  padding: 2px;
+  padding: 1px;
   border-radius: 8px;
   cursor: pointer;
 }
