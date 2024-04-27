@@ -6,6 +6,7 @@ function BasketCard({ data, clickHandler }) {
   const { title, image, quantity } = data;
   return (
     <div className={styles.card}>
+      jnkjnkj
       <img src={image} alt={data.title} />
       <p>{shortenText(title)}</p>
       <div className={styles.actions}>
