@@ -7,7 +7,6 @@ function BasketCard({ data, clickHandler }) {
   return (
     <div className={styles.card}>
       jnkjnkj
-      <img src={image} alt={data.title} />
       <p>{shortenText(title)}</p>
       <div className={styles.actions}>
         {quantity === 1 && (
